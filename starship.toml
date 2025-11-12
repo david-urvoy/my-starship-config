@@ -17,6 +17,7 @@ right_format = """
 $git_status\
 $nodejs\
 $bun\
+$custom\
 $time"""
 
 palette = 'pro'
@@ -141,6 +142,15 @@ detect_extensions = []
 [bun]
 format = '\[[$symbol($version)]($style)\]'
 version_format = "${raw}"
+
+[custom.pnpm]
+description = "pnpm version"
+require_repo = true
+ignore_timeout = true
+command = "~/.local/bin/pnpm-version"
+detect_files = ["pnpm-lock.yaml"]
+format = "[📦 $output]($style) "
+style = "bold blue"
 
 [time]
 disabled = false
